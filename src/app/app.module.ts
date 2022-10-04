@@ -11,6 +11,7 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
     SkillsComponent,
     ProyectosComponent,
     PortfolioComponent,
-    IniciarSesionComponent
+    IniciarSesionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
