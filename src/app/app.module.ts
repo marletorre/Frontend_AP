@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
@@ -14,6 +14,7 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BannerComponent } from './componentes/banner/banner.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { BannerComponent } from './componentes/banner/banner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

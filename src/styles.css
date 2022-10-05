@@ -1,12 +1,22 @@
+/* ESTILOS BANNER */
 #banner{
     background-image: url(../src/assets/imagenes/cambio.jpg);
     background-size: contain;
 }
 
-header a:hover{
-    color:orange;
+/* ESTILOS ACERCA DE */
+
+#about{
+    padding: 14px 15px;
+    background: linear-gradient(antiquewhite,white);
+} 
+
+#acercaDe{
+    padding:20px;
+    background: #FFFFFF;
 }
 
+/* ESTILOS FOOTER */
 footer {
     padding: 10px 0;
     text-align: center;
@@ -24,4 +34,9 @@ footer a:hover {
 
 footer .list-inline .list-inline-item {
   padding: 10px 10px;  
+}
+
+fa-icon {
+    font-size: 14px;
+    margin-left: 5px;
 }
