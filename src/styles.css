@@ -2,3 +2,26 @@
     background-image: url(../src/assets/imagenes/cambio.jpg);
     background-size: contain;
 }
+
+header a:hover{
+    color:orange;
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+    color: orange;
+    background-color: black;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: orange;
+}
+
+footer .list-inline .list-inline-item {
+  padding: 10px 10px;  
+}
