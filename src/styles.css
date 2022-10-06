@@ -37,6 +37,10 @@
     background-color: grey;
 }
 
+#nombreSkill{
+ padding: 0 0 20px;
+}
+
 .container h2{
     text-shadow: 2px 2px 10px orange;
 }

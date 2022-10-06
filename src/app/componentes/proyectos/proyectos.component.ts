@@ -3,7 +3,7 @@ import { Proyectos } from 'src/app/interfaces/proyectos';
 import { DatosService } from 'src/app/servicios/datos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { faAdd,faEdit,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faAdd,faPen,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-proyectos',
@@ -12,7 +12,7 @@ import { faAdd,faEdit,faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProyectosComponent implements OnInit {
   faAdd=faAdd;
-  faEdit=faEdit;
+  faPen=faPen;
   faTrash=faTrash;
   title:string='Proyectos';
   path:string='/proyectos';

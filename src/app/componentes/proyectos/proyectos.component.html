@@ -5,13 +5,15 @@
                 <h2>{{title}}</h2>
                 
             </div>
-            <div class="container-center">
+            <div class="container">
                 <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')"data-bs-toggle="modal" data-bs-target="#addProyectoModal"></fa-icon>
                 <div class="container" *ngFor="let proyectos of proyectos">
                     <div class="row">
                       <div class="col">
-                        {{proyectos.nombreProyecto}}
-                        <img [src]="[proyectos.imagenProyecto]" class="d-block w-100">
+                        <h6>{{proyectos.nombreProyecto}}
+                        <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',proyectos)" data-bs-toggle="modal" data-bs-target="#editProyectoModal"></fa-icon>
+                        <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',proyectos)" data-bs-toggle="modal" data-bs-target="#deleteProyectosModal"></fa-icon></h6>
+                        <img [src]="[proyectos.imgProyecto]" class="d-block w-100">
                         <p>{{proyectos.descripcion}}</p>
                       </div>
                     </div>
@@ -161,10 +163,10 @@
                   <label for="picExp">URL de la imagen</label>
                   <input
                     type="text"
-                    ngModel="{{ editProyectos?.imagenProyecto }}"
-                    name="imagenProyecto"
+                    ngModel="{{ editProyectos?.imgProyecto }}"
+                    name="imgProyecto"
                     class="form-control"
-                    id="imagenProyecto"
+                    id="imgProyecto"
                     placeholder="URL de la imagen"
                   />
                 </div>
@@ -217,10 +219,6 @@
                   Si
                 </button>
               </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

@@ -6,14 +6,14 @@
         </div>
         <div class="container text-center" *ngFor="let skill of skills">
             <div class="row">
-                <div class="col" id="nombreSkill">{{skill.nombreSkill}}</div>
+                <div class="col text-end" id="nombreSkill"><h6>{{skill.nombreSkill}}</h6></div>
                 <div class="col"> 
                   <div class="progress">
                         <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': skill.valor + '%'}"
                         ></div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col text-start">
                   <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',skill)" data-bs-toggle="modal" data-bs-target="#editSkillModal"></fa-icon>
                   <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',skill)" data-bs-toggle="modal" data-bs-target="#deleteSkillModal"></fa-icon>
               </div>

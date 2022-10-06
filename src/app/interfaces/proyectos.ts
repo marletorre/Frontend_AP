@@ -3,5 +3,5 @@ export interface Proyectos {
     nombreProyecto:string;
     descripcion:string;
     urlProyecto:string;
-    imagenProyecto:string;
+    imgProyecto:string;
 }
