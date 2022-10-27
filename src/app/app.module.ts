@@ -15,6 +15,9 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { FormsModule} from '@angular/forms';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { FormsModule} from '@angular/forms';
     PortfolioComponent,
     IniciarSesionComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
+    RegistroComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
