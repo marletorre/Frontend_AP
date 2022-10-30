@@ -8,7 +8,8 @@ const routes: Routes = [
   {path:'portfolio',component:PortfolioComponent},
   {path:'login',component:IniciarSesionComponent},
   {path:'registro',component:RegistroComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'}
+  {path:'home',component:PortfolioComponent},
+  {path:'',component:IniciarSesionComponent}
 ];
 
 @NgModule({

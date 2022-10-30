@@ -14,9 +14,10 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BannerComponent } from './componentes/banner/banner.component';
-import { FormsModule} from '@angular/forms';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import { MenuComponent } from './componentes/menu/menu.component';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './servicios/interceptor.service';
+
 
 
 @NgModule({
@@ -33,7 +34,6 @@ import { MenuComponent } from './componentes/menu/menu.component';
     FooterComponent,
     BannerComponent,
     RegistroComponent,
-    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

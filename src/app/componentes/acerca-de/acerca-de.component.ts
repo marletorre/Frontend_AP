@@ -4,6 +4,7 @@ import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons'
 import { DatosService } from 'src/app/servicios/datos.service';
 import { Usuario } from 'src/app/interfaces/usuario';
 import {NgForm} from '@angular/forms'
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -18,13 +19,15 @@ export class AcercaDeComponent implements OnInit {
   faTrash=faTrash;
   path:string="/usuario/1";
   path2:string="/usuario";
-  
-  constructor(private datosService:DatosService) { }
+  isLogged=true;
+  constructor(private datosService:DatosService,public tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.getUsuario();
   }
 
+
+  
     public getUsuario(){
     this.datosService.obtenerDatos<Usuario>(this.path).subscribe({
       next:(response:Usuario)=>{

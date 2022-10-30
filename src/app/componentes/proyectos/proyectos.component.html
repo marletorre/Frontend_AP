@@ -223,3 +223,12 @@
       </div>
     </div>
   </div>
+  <div
+  *ngIf="proyectos?.length == 0 "
+  class="col-lg-12 col-md-12 col-xl-12"
+>
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">No hay Proyectos Cargados!</h4>
+    <p>No se encontraron Proyectos en Base de Datos.</p>
+  </div>
+</div>
