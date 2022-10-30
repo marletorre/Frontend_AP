@@ -6,11 +6,11 @@
             </div>
             <div class="col-md-8">
                 <div id="experiencias" class="border rounded">
-                    <fa-icon class="float-end"type="button" [icon]="faAdd" (click)="onOpenModal('add')"  data-bs-toggle="modal" data-bs-target="#addExperienciaModal"></fa-icon>
+                    <fa-icon class="float-end"type="button" [icon]="faAdd" (click)="onOpenModal('add')"  data-bs-toggle="modal" data-bs-target="#addExperienciaModal" *ngIf="isAdmin"></fa-icon>
                       <div class="experiencia" *ngFor="let experiencia of experiencias" >
                         <h4>{{experiencia.empresa}} 
-                            <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit', experiencia)"  data-bs-toggle="modal" data-bs-target="#editExperienciaModal"></fa-icon>
-                            <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',experiencia)" data-bs-toggle="modal" data-bs-target="#deleteExperienciaModal" ></fa-icon>
+                            <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit', experiencia)"  data-bs-toggle="modal" data-bs-target="#editExperienciaModal" *ngIf="isAdmin"></fa-icon>
+                            <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',experiencia)" data-bs-toggle="modal" data-bs-target="#deleteExperienciaModal" *ngIf="isAdmin"></fa-icon>
                         </h4>
                         <h5>{{experiencia.cargo}}</h5>
                         <span class="experiencia-date"><strong>Desde:</strong>{{experiencia.anhoInicio}} <strong>Hasta:</strong>{{experiencia.anhoFin}}</span>

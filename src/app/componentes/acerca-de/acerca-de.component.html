@@ -4,7 +4,7 @@
             <div class="col-md-4" *ngIf="usuario">
                 <img [src]="usuario.fotoUsuario" class="border border-3 border-dark rounded-circle"> 
                 <h3>{{usuario.nombre+" "+usuario.apellido}} 
-                  <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('add')"  data-bs-toggle="modal" data-bs-target="#editUsuarioModal"></fa-icon></h3>
+                  <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('add')"  data-bs-toggle="modal" data-bs-target="#editUsuarioModal" *ngIf="isAdmin"></fa-icon></h3>
                 <h5>{{usuario.titulo}}</h5>
                 <h2>{{title}}</h2>
             </div>

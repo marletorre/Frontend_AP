@@ -2,7 +2,7 @@
     <div class="container">
         <h2> {{nombre}}</h2>
         <div class="text-end">
-          <fa-icon type="button" [icon]="faAdd" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addSkillModal"></fa-icon>
+          <fa-icon type="button" [icon]="faAdd" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addSkillModal" *ngIf="isAdmin"></fa-icon>
         </div>
         <div class="container text-center" *ngFor="let skill of skills">
             <div class="row">
@@ -14,8 +14,8 @@
                     </div>
                 </div>
                 <div class="col text-start">
-                  <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',skill)" data-bs-toggle="modal" data-bs-target="#editSkillModal"></fa-icon>
-                  <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',skill)" data-bs-toggle="modal" data-bs-target="#deleteSkillModal"></fa-icon>
+                  <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',skill)" data-bs-toggle="modal" data-bs-target="#editSkillModal" *ngIf="isAdmin"></fa-icon>
+                  <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',skill)" data-bs-toggle="modal" data-bs-target="#deleteSkillModal" *ngIf="isAdmin"></fa-icon>
               </div>
                 
             </div>

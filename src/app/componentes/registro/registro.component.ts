@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/servicios/token.service';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
-import { LoginUsuario } from 'src/app/interfaces/login-usuario';
+import { NuevoUsuario } from 'src/app/interfaces/nuevo-usuario';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -10,9 +10,12 @@ import { LoginUsuario } from 'src/app/interfaces/login-usuario';
 })
 export class RegistroComponent implements OnInit {
   isLogged= false;
-  isLoginFail=false;
+  isRegister=false;
+  isRegisterFail=false;
+  nombre!:string;
   nombreUsuario!: string;
-  loginUsuario!: LoginUsuario;
+  email!:string;
+  nuevoUsuario!: NuevoUsuario;
   password!: string;
   roles:string[]=[];
   errMsj!: string;
@@ -28,23 +31,21 @@ export class RegistroComponent implements OnInit {
 
 }
 
-onLogin():void{
-  this.loginUsuario=new LoginUsuario(this.nombreUsuario,this.password);
-  this.authService.login(this.loginUsuario).subscribe(
-    data=>{
-      this.isLogged=true;
-      this.isLoginFail=false;
-      this.tokenService.setToken(data.token);
-      this.tokenService.setUsername(data.nombreUsuario);
-      this.tokenService.setAuthorities(data.authorities);
-      this.roles=data.authorities;
-      this.router.navigate(['/']);
-    },
-    err=>{
-      this.isLogged=false;
-      this.isLoginFail=true;
-      this.errMsj=err.error.message;
+onRegister():void{
+  this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario,this.email,this.password);
+      this.authService.nuevo(this.nuevoUsuario).subscribe({next:
+        (data)=>{
+          this.isRegister=true;
+          this.isRegisterFail=false;
+             
+        (error:any)=>{
+          this.isRegisterFail=true;
+          this.errMsj=error.error.mensaje;
+        };
+      }}
+      )}
+
+      login(){
+        this.router.navigate(['/login']);
+      }
     }
-  )
-}
-}

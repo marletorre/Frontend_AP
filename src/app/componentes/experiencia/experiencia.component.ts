@@ -4,6 +4,7 @@ import { HttpErrorResponse} from '@angular/common/http';
 import { Experiencia } from 'src/app/interfaces/experiencia';
 import {faPen,faTrash,faAdd} from '@fortawesome/free-solid-svg-icons'
 import {NgForm} from '@angular/forms'
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -18,11 +19,21 @@ export class ExperienciaComponent implements OnInit {
   faTrash=faTrash;
   faAdd=faAdd;
   path:string='/experiencia';
+  isLogged = true;
+  roles: string[] | undefined;
+  isAdmin = false;
 
-  constructor(private datosService:DatosService ) { }
+  constructor(private datosService:DatosService,
+    private tokenService:TokenService ) { }
 
   ngOnInit(): void {
     this.getExperiencias();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   public getExperiencias(){

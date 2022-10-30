@@ -6,13 +6,13 @@
             </div>
                 <div class="col-md-8">
                   <div id="educacion" class="border rounded">
-                      <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal"></fa-icon>
+                      <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal" *ngIf="isAdmin"></fa-icon>
                       <div class="estudio" *ngFor="let educacion of educaciones" >
                       <img [src]="[educacion.logoEscuela]" height="50px">
                       <h4>
                         {{educacion.institucion}}
-                        <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',educacion)" data-bs-toggle="modal" data-bs-target="#editEducacionModal"></fa-icon> 
-                        <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',educacion)" data-bs-toggle="modal" data-bs-target="#deleteEducacionModal"></fa-icon>  
+                        <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',educacion)" data-bs-toggle="modal" data-bs-target="#editEducacionModal" *ngIf="isAdmin"></fa-icon> 
+                        <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',educacion)" data-bs-toggle="modal" data-bs-target="#deleteEducacionModal" *ngIf="isAdmin"></fa-icon>  
                       </h4>
                         
                       <h5>{{educacion.carrera}}</h5>

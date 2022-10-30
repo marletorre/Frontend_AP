@@ -3,7 +3,7 @@
 
 <div class="text-center" *ngIf="isLogged; else loggedOut">
   <h2>Ya has iniciado sesión</h2>
-  <button type="sumbit" (click)="portfolio()">Ir al Portfolio</button>
+  <button type="submit" class="btn btn-secondary my-3" (click)="portfolio()">Ir al Portfolio</button>
 </div>
 
 <ng-template #loggedOut id="login">
@@ -30,10 +30,10 @@
               <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
           </div>
           <div class="form-group">
-              <button  type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">Iniciar Sesión</button>
+              <button  type="submit" class="btn btn-info btn-block my-3" [disabled]="!f.valid">Iniciar Sesión</button>
           </div>
       </form>
-      <div *ngIf="f.submitted" class="alert alert-danger mt-3">Error en el Login</div>
+      <div *ngIf="f.submitted && !isLogged" class="alert alert-danger mt-3">Error en el Login</div>
       </div>
     </div>
   </div>

@@ -5,14 +5,14 @@
                 <h2>{{title}}</h2>   
             </div>
             <div class="container">
-                <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')"data-bs-toggle="modal" data-bs-target="#addProyectoModal"></fa-icon>
+                <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')"data-bs-toggle="modal" data-bs-target="#addProyectoModal" *ngIf="isAdmin"></fa-icon>
                 <div class="card" style="width: 450px;" *ngFor="let proyectos of proyectos">
                     <img [src]="[proyectos.imgProyecto]" class="card-img-top" height="250px" width="400px" alt="...">
                     <div class="card text-center" >
                         <div class="card-body">
                             <h5 class="card-title">{{proyectos.nombreProyecto}}</h5>
-                            <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',proyectos)" data-bs-toggle="modal" data-bs-target="#editProyectoModal"></fa-icon>
-                            <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',proyectos)" data-bs-toggle="modal" data-bs-target="#deleteProyectosModal"></fa-icon>
+                            <fa-icon type="button" [icon]="faPen" (click)="onOpenModal('edit',proyectos)" data-bs-toggle="modal" data-bs-target="#editProyectoModal" *ngIf="isAdmin"></fa-icon>
+                            <fa-icon type="button" [icon]="faTrash" (click)="onOpenModal('delete',proyectos)" data-bs-toggle="modal" data-bs-target="#deleteProyectosModal" *ngIf="isAdmin"></fa-icon>
                             <p class="card-text">{{proyectos.descripcion}}</p>
                             <a href="#" class="btn btn-success">{{proyectos.urlProyecto}}</a>
                         </div>

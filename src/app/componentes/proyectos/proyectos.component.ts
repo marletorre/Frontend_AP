@@ -4,6 +4,7 @@ import { DatosService } from 'src/app/servicios/datos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { faAdd,faPen,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -19,10 +20,20 @@ export class ProyectosComponent implements OnInit {
   public proyectos:Proyectos[]|undefined;
   public editProyectos:Proyectos|undefined;
   public borrarProyectos:Proyectos|undefined;
-  constructor(private datosService:DatosService) { }
+  isLogged = true;
+  roles: string[] | undefined;
+  isAdmin = false;
+  constructor(private datosService:DatosService,
+    private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.getProyectos();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   public getProyectos(){

@@ -4,6 +4,7 @@ import { faPen,faTrash,faAdd } from '@fortawesome/free-solid-svg-icons';
 import { Educacion } from 'src/app/interfaces/educacion';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -19,13 +20,23 @@ export class EducacionComponent implements OnInit {
   faPen=faPen;
   faTrash=faTrash;
   faAdd=faAdd;
-  path: string = '/educacion'
+  path: string = '/educacion';
+  isLogged = true;
+  roles: string[] | undefined;
+  isAdmin = false;
 
   constructor(
-    private datosService:DatosService ) { }
+    private datosService:DatosService,
+    private tokenService:TokenService ) { }
 
   ngOnInit(): void {
     this.getEducaciones();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
     public getEducaciones(){
       this.datosService.obtenerDatos<Educacion[]>(this.path).subscribe({

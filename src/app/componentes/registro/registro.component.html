@@ -1,7 +1,8 @@
 <app-header></app-header>
 <app-banner></app-banner>
 <div class="text-center" *ngIf="isLogged; else loggedOut">
-    <h2>Ya has iniciado sesión</h2>
+    <h2>Cuenta creada</h2>
+    <button type="sumbit" class="btn btn-secondary my-3" (click)="login()">Ir al Portfolio</button>
   </div>
   
   <ng-template #loggedOut>
@@ -18,7 +19,28 @@
           </ul>
         </div>
         <div class="card-body">
-
+          <form #f="ngForm" (ngSubmit)="onRegister()" novalidate>
+            <div class="formGroup">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="nombre" required>
+          </div>
+            <div class="formGroup">
+                <label for="nombreUsuario">Nombre de Usuario</label>
+                <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" required>
+            </div>
+            <div class="formGroup">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
+            </div>
+            <div class="formGroup">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" class="form-control" [(ngModel)]="email" required>
+          </div>
+            <div class="form-group">
+                <button  type="submit" class="btn btn-info btn-block my-3" [disabled]="!f.valid">Crear Cuenta</button>
+            </div>
+        </form>
+        <div *ngIf="f.submitted && !isRegister" class="alert alert-danger mt-3">Error en la creación de usuario</div>
         </div>
       </div>
     </div>

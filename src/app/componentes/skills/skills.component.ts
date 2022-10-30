@@ -4,6 +4,7 @@ import { Skills } from 'src/app/interfaces/skills';
 import { HttpErrorResponse } from '@angular/common/http';
 import { DatosService } from 'src/app/servicios/datos.service';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 
 
 @Component({
@@ -20,11 +21,21 @@ export class SkillsComponent implements OnInit {
   faTrash=faTrash;
   faAdd=faAdd;
   path:string='/skills';
+  isLogged = true;
+  roles: string[] | undefined;
+  isAdmin = false;
   constructor(
-    private datosService:DatosService ) { }
+    private datosService:DatosService,
+    private tokenService:TokenService ) { }
 
   public ngOnInit(): void {
     this.getSkills();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
   public getSkills(){
     this.datosService.obtenerDatos<Skills[]>(this.path).subscribe({

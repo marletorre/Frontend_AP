@@ -13,7 +13,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class IniciarSesionComponent implements OnInit {
 
   isLogged= false;
-  isLoginFail=true;
+  isLoginFail=false;
   loginUsuario!: LoginUsuario;
   nombreUsuario!: string;
   password!: string;
@@ -44,20 +44,19 @@ export class IniciarSesionComponent implements OnInit {
           this.tokenService.setUsername(data.nombreUsuario);
           this.tokenService.setAuthorities(data.authorities);
           this.roles=data.authorities;
-          this.router.navigate(['/portfolio'])
-        ,      
+          this.router.navigate(['/portfolio']);    
         
         (error:any)=> {
             this.isLogged=false;
             this.isLoginFail=true;
-            this.errMsj=error.mensaje;
+            this.errMsj=error.error.mensaje;
            
             
         };
       }}
       )}
 
-      portfolio():void{
+      portfolio(){
         this.router.navigate(['/portfolio']);
       }
   }
