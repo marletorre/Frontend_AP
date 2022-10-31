@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faTrash,faAdd } from '@fortawesome/free-solid-svg-icons';
 import { DatosService } from 'src/app/servicios/datos.service';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { NgForm } from '@angular/forms';
@@ -15,6 +15,7 @@ export class AcercaDeComponent implements OnInit {
   title = 'Acerca de mi:';
   public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
+  faAdd=faAdd;
   faPen = faPen;
   faTrash = faTrash;
   path: string = 'usuario/1';
