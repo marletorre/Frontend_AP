@@ -63,14 +63,6 @@
     
                 <div class="modal-footer">
                   <button
-                    type="button"
-                    id="add-skill-form"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button
                     [disabled]="addForm.invalid"
                     type="submit"
                     class="btn btn-primary"
@@ -131,14 +123,6 @@
                 </div>
       
                 <div class="modal-footer">
-                  <button
-                    type="button"
-                    id="3"
-                    data-dismiss="modal"
-                    class="btn btn-secondary"
-                  >
-                    Cerrar
-                  </button>
                   <button
                     (click)="onUpdateSkills(editForm.value)"
                     data-dismiss="modal"

@@ -47,9 +47,6 @@
                   <input type="text" ngModel="{{usuario?.fotoUsuario}}" name="fotoUsuario" class="form-control" id="fotoUsuario" placeholder="URL de la imagen"/>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" data-dismiss="modal" class="btn btn-secondary">
-                    Cerrar
-                  </button>
                   <button (click)="onUpdateUsuario(editForm.value)" data-dismiss="modal" class="btn btn-primary">
                     Guardar Cambios
                   </button>
@@ -98,14 +95,6 @@
               />
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                id="add-education-form"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
               <button
                 [disabled]="addForm.invalid"
                 type="submit"

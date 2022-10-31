@@ -4,7 +4,7 @@
             <div class="col-md-4">
                 <h2>{{title}}</h2>   
             </div>
-            <div class="container text-center">
+            <div class="container">
                 <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')"data-bs-toggle="modal" data-bs-target="#addProyectoModal" *ngIf="isAdmin"></fa-icon>
                 <div class="card" style="width: 450px;" *ngFor="let proyectos of proyectos">
                     <img [src]="[proyectos.imgProyecto]" class="card-img-top" height="250px" width="400px" alt="...">
@@ -85,14 +85,6 @@
       
                 <div class="modal-footer">
                   <button
-                    type="button"
-                    id="add-project-form"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button
                     [disabled]="addForm.invalid"
                     type="submit"
                     class="btn btn-primary"
@@ -171,14 +163,6 @@
                   />
                 </div>
                 <div class="modal-footer">
-                  <button
-                    type="button"
-                    id=""
-                    data-dismiss="modal"
-                    class="btn btn-secondary"
-                  >
-                    Cerrar
-                  </button>
                   <button
                     (click)="onUpdateProyectos(editForm.value)"
                     data-dismiss="modal"
