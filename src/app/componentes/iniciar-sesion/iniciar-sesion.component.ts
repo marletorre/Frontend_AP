@@ -50,6 +50,7 @@ export class IniciarSesionComponent implements OnInit {
             this.isLogged=false;
             this.isLoginFail=true;
             this.errMsj=error.error.message;
+            console.log(error.message);
            
             
         };

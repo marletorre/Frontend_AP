@@ -33,7 +33,7 @@
               <button  type="submit" class="btn btn-info btn-block my-3" [disabled]="!f.valid">Iniciar Sesión</button>
           </div>
       </form>
-      <div *ngIf="f.submitted && !isLogged" class="alert alert-danger mt-3">Error en el Login</div>
+      <div *ngIf="f.submitted && !isLoginFail" class="alert alert-danger mt-3">Error en el Login</div>
       </div>
     </div>
   </div>
