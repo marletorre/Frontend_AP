@@ -4,7 +4,7 @@
             <div class="col-md-4">
                 <h2>{{title}}</h2>   
             </div>
-            <div class="container">
+            <div class="container text-center">
                 <fa-icon class="float-end" type="button" [icon]="faAdd" (click)="onOpenModal('add')"data-bs-toggle="modal" data-bs-target="#addProyectoModal" *ngIf="isAdmin"></fa-icon>
                 <div class="card" style="width: 450px;" *ngFor="let proyectos of proyectos">
                     <img [src]="[proyectos.imgProyecto]" class="card-img-top" height="250px" width="400px" alt="...">
