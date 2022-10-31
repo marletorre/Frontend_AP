@@ -20,7 +20,7 @@ export class EducacionComponent implements OnInit {
   faPen=faPen;
   faTrash=faTrash;
   faAdd=faAdd;
-  path: string = '/educacion';
+  path: string = 'educacion';
   isLogged = true;
   roles: string[] | undefined;
   isAdmin = false;

@@ -20,7 +20,7 @@ export class SkillsComponent implements OnInit {
   faPen=faPen;
   faTrash=faTrash;
   faAdd=faAdd;
-  path:string='/skills';
+  path:string='skills';
   isLogged = true;
   roles: string[] | undefined;
   isAdmin = false;

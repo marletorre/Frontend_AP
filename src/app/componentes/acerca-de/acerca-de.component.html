@@ -58,3 +58,12 @@
       </div>
     </div>
   </div>
+  <div
+  *ngIf="!usuario"
+  class="col-lg-12 col-md-12 col-xl-12"
+>
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Sin Usuario</h4>
+    <p>No se encontró Usuario en Base de Datos</p>
+  </div>
+</div>

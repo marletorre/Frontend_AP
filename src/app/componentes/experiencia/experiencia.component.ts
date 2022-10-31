@@ -18,7 +18,7 @@ export class ExperienciaComponent implements OnInit {
   faPen=faPen;
   faTrash=faTrash;
   faAdd=faAdd;
-  path:string='/experiencia';
+  path:string='experiencia';
   isLogged = true;
   roles: string[] | undefined;
   isAdmin = false;

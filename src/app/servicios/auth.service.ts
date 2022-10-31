@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  Observable} from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { NuevoUsuario } from '../interfaces/nuevo-usuario';
 import { LoginUsuario } from '../interfaces/login-usuario';
 import { JwtDTO } from '../interfaces/jwt-dto';
@@ -12,7 +11,7 @@ import { JwtDTO } from '../interfaces/jwt-dto';
 export class AuthService {
 
   loginUsuario:LoginUsuario | undefined;
-  private api=environment.apiUrl+'/auth/';
+  private api='https://mtbackendap.herokuapp.com'+'/auth/';
   
   constructor(private httpClient:HttpClient) { }
 

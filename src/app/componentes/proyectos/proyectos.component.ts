@@ -16,7 +16,7 @@ export class ProyectosComponent implements OnInit {
   faPen=faPen;
   faTrash=faTrash;
   title:string='Proyectos';
-  path:string='/proyectos';
+  path:string='proyectos';
   public proyectos:Proyectos[]|undefined;
   public editProyectos:Proyectos|undefined;
   public borrarProyectos:Proyectos|undefined;

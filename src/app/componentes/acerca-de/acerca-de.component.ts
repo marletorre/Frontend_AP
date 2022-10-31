@@ -17,8 +17,8 @@ export class AcercaDeComponent implements OnInit {
   public editUsuario: Usuario | undefined;
   faPen = faPen;
   faTrash = faTrash;
-  path: string = '/usuario/1';
-  path2: string = '/usuario';
+  path: string = 'usuario/1';
+  path2: string = 'usuario';
   isLogged = true;
   roles: string[] | undefined;
   isAdmin = false;
