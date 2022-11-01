@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/interfaces/login-usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { NgFor } from '@angular/common';
 
 
 @Component({
@@ -50,7 +51,6 @@ export class IniciarSesionComponent implements OnInit {
             this.isLogged=false;
             this.isLoginFail=true;
             this.errMsj=error.error.mensaje;
-            console.log(error.mensaje);
            
             
         };
