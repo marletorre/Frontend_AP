@@ -19,7 +19,7 @@ export class AuthService {
     return this.httpClient.post<any>(this.api+'nuevo',nuevoUsuario);
   }
 
-  public login(loginUsuario:LoginUsuario):Observable<any>{
-    return this.httpClient.post<any>(this.api+'login',loginUsuario);
+  public login(loginUsuario:LoginUsuario):Observable<JwtDTO>{
+    return this.httpClient.post<JwtDTO>(this.api+'login',loginUsuario);
   }
 }
